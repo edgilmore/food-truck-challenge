@@ -50,7 +50,7 @@
                     vm.map = { center: {latitude: vm.foodtrucks[1].latitude, longitude: vm.foodtrucks[1].longitude }, zoom: 15}
                     vm.options = {
                         scrollwheel:false,
-                        draggable: false
+                        draggable: true
                     };
                     for(var i = 0; i < vm.foodtrucks.length; i++){
                         if(vm.foodtrucks[i].location != undefined && vm.foodtrucks[i].objectid != undefined){
