@@ -1,0 +1,19 @@
+{
+  "name": "food-truck-challenge",
+  "version": "1.0.0",
+  "description": "food truck challenge for clear voice interview",
+  "main": "app.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edgilmore/food-truck-challenge.git"
+  },
+  "author": "Ed Gilmore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edgilmore/food-truck-challenge/issues"
+  },
+  "homepage": "https://github.com/edgilmore/food-truck-challenge#readme"
+}
