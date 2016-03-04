@@ -7,7 +7,7 @@
     angular.module('app')
         .config(function($routeProvider, uiGmapGoogleMapApiProvider){
             uiGmapGoogleMapApiProvider.configure({
-                v: '3.2.0',
+                v: '3.2.2',
                 libraries: 'weather,geometry,visualization'
             });
             $routeProvider

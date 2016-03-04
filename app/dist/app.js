@@ -49,7 +49,7 @@
                 .then(function(maps){
                     vm.map = { center: {latitude: vm.foodtrucks[1].latitude, longitude: vm.foodtrucks[1].longitude }, zoom: 15}
                     vm.options = {
-                        scrollwheel:false,
+                        scrollwheel:true,
                         draggable: true
                     };
                     for(var i = 0; i < vm.foodtrucks.length; i++){
