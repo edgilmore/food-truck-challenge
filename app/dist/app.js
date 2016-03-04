@@ -52,7 +52,7 @@
         }
         init();
         function mapInit(foodtrucks){
-            if(foodtrucks.length() < 1 ){
+            if(foodtrucks.length < 1 ){
                 dataService.getFoodTrucks().then(function(){
                     mapInit(vm.foodtrucks);
                 })
