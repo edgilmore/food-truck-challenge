@@ -1,0 +1,24 @@
+{
+  "name": "food-truck-challenge",
+  "description": "food truck challenge for clear voice interview",
+  "main": "app.js",
+  "authors": [
+    "Ed Gilmore"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/edgilmore/food-truck-challenge",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.5.0"
+  }
+}

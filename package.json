@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/edgilmore/food-truck-challenge/issues"
   },
-  "homepage": "https://github.com/edgilmore/food-truck-challenge#readme"
+  "homepage": "https://github.com/edgilmore/food-truck-challenge#readme",
+  "dependencies": {
+    "bower": "^1.7.7"
+  }
 }
