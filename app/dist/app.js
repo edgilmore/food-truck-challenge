@@ -7,7 +7,7 @@
     angular.module('app')
         .config(function($routeProvider, uiGmapGoogleMapApiProvider){
             uiGmapGoogleMapApiProvider.configure({
-                v: '3.2.0',
+                v: '3.2.2',
                 libraries: 'weather,geometry,visualization'
             });
             $routeProvider
@@ -47,25 +47,46 @@
                 });
             uiGmapGoogleMapApi
                 .then(function(maps){
-                    vm.map = { center: {latitude: vm.foodtrucks[1].latitude, longitude: vm.foodtrucks[1].longitude }, zoom: 15}
-                    vm.options = {
-                        scrollwheel:true,
-                        draggable: true
-                    };
-                    for(var i = 0; i < vm.foodtrucks.length; i++){
-                        if(vm.foodtrucks[i].location != undefined && vm.foodtrucks[i].objectid != undefined){
-                            var markerObject = {
-                                id: vm.foodtrucks[i].objectid,
-                                latitude: vm.foodtrucks[i].location.latitude,
-                                longitude: vm.foodtrucks[i].location.longitude,
-                                title: vm.foodtrucks[i].applicant
-                            };
-                            vm.markers.push(markerObject)
-                        }
-                    }
+                    mapInit(vm.foodtrucks)
                 });
         }
         init();
+        function mapInit(foodtrucks){
+            if(foodtrucks.length() < 1 ){
+                dataService.getFoodTrucks().then(function(){
+                    mapInit(vm.foodtrucks);
+                })
+            }
+            if(foodtrucks.length > 0){
+                function mapLocation(){
+                    for(var i = 0; i < foodtrucks.length; i++){
+                        if(foodtrucks[i].location !== undefined){
+                            return {
+                                latitude: foodtrucks[i].latitude,
+                                longitude: foodtrucks[i].longitude
+                            }
+                        }
+                    }
+                }
+                var cityMap = mapLocation();
+                vm.map = { center: {latitude: cityMap.latitude, longitude: cityMap.longitude }, zoom: 15};
+                vm.options = {
+                    scrollwheel:true,
+                    draggable: true
+                };
+                for(var i = 0; i < foodtrucks.length; i++){
+                    if(foodtrucks[i].location != undefined && foodtrucks[i].objectid != undefined){
+                        var markerObject = {
+                            id: foodtrucks[i].objectid,
+                            latitude: foodtrucks[i].location.latitude,
+                            longitude: foodtrucks[i].location.longitude,
+                            title: foodtrucks[i].applicant
+                        };
+                        vm.markers.push(markerObject)
+                    }
+                }
+            }
+        }
     }
 })();
 /**
