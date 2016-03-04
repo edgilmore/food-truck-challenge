@@ -25,6 +25,7 @@
   "dependencies": {
     "angular-ui": "^0.4.0",
     "angular-route": "^1.5.0",
-    "angular-mocks": "^1.5.0"
+    "angular-mocks": "^1.5.0",
+    "angular-google-maps": "^2.3.2"
   }
 }

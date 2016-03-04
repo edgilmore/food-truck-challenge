@@ -4,12 +4,12 @@
 (function(){
     angular.module('app').controller('mainController', mainController);
 
-    mainController.$inject = ['dataService', '$window'];
+    mainController.$inject = ['dataService', 'uiGmapGoogleMapApi'];
 
-    function mainController(dataService){
+    function mainController(dataService, uiGmapGoogleMapApi){
         var vm = this;
         vm.foodtrucks = [];
-        vm.title = 'View the food trucks';
+        vm.title = 'Food trucks';
 
         function init(){
             dataService.getFoodTrucks()
@@ -20,7 +20,11 @@
                     else{
                         vm.foodtrucks = response.data;
                     }
-                })
+                });
+            uiGmapGoogleMapApi
+                .then(function(maps){
+                    vm.map = { center: {latitude: vm.foodtrucks[1].latitude, longitude: vm.foodtrucks[1].longitude }, zoom: 15}
+                });
         }
         init();
     }

@@ -3,9 +3,13 @@
  */
 (function(){
     'use strict';
-    angular.module('app', ['ngRoute']);
+    angular.module('app', ['ngRoute', 'uiGmapgoogle-maps']);
     angular.module('app')
-        .config(function($routeProvider){
+        .config(function($routeProvider, uiGmapGoogleMapApiProvider){
+            uiGmapGoogleMapApiProvider.configure({
+                v: '3.2.0',
+                libraries: 'weather,geometry,visualization'
+            });
             $routeProvider
                 .when('/', {
                     controller: 'mainController',

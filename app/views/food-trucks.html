@@ -2,12 +2,10 @@
     <div class="row">
         <h1>{{ vm.title }}</h1>
         <div>
+            <ui-gmap-google-map center='vm.map.center' zoom='vm.map.zoom'></ui-gmap-google-map>
             <ul class="list-unstyled">
                 <li ng-repeat="foodtruck in vm.foodtrucks">
-                    ----------------------NEW TRUCK--------------------------
-                    <p ng-repeat="property in foodtruck">
-                        {{foodtruck}} {{property}}
-                    </p>
+                    <p>{{foodtruck}}</p>
                 </li>
             </ul>
         </div>
