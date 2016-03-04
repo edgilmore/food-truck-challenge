@@ -11,7 +11,7 @@ var rename = require('gulp-rename');
 gulp.task('build:sass', function () {
     gulp.src('./app/styles/sass/site.scss')
         .pipe(sass({'outputStyle':'compressed'}).on('error', sass.logError))
-        .pipe(gulp.dest('./app/styles/'));
+        .pipe(gulp.dest('./app/dist/'));
 });
 //build scripts
 gulp.task('build:scripts', function() {
@@ -19,7 +19,7 @@ gulp.task('build:scripts', function() {
         .pipe(concat('app.js'))
         .pipe(uglify())
         .pipe(rename('app.min.js'))
-        .pipe(gulp.dest('./app/scripts/dist'))
+        .pipe(gulp.dest('./app/dist'));
 });
 
 //watch sass
