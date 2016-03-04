@@ -21,5 +21,9 @@
   "devDependencies": {
     "angular": "^1.5.0",
     "bootstrap-sass": "^3.3.6"
+  },
+  "dependencies": {
+    "angular-ui": "^0.4.0",
+    "angular-route": "^1.5.0"
   }
 }
