@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="row">
+        <h1>{{ vm.title }}</h1>
+        <div>
+            <ul class="list-unstyled">
+                <li ng-repeat="foodtruck in vm.foodtrucks">
+                    ----------------------NEW TRUCK--------------------------
+                    <p ng-repeat="property in foodtruck">
+                        {{foodtruck}} {{property}}
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

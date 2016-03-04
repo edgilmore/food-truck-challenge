@@ -3,6 +3,16 @@
  */
 (function(){
     'use strict';
-    angular.module('foodTruckApp', ['ngRoute']);
+    angular.module('app', ['ngRoute']);
+    angular.module('app')
+        .config(function($routeProvider){
+            $routeProvider
+                .when('/', {
+                    controller: 'mainController',
+                    templateUrl: 'views/food-trucks.html',
+                    controllerAs: 'vm'
+                })
+                .otherwise({redirectTo: '/'});
+        });
 })();
 

@@ -1,6 +1,6 @@
 {
   "name": "food-truck-challenge",
-  "description": "food truck challenge for clear voice interview",
+  "description": "food truck challenge",
   "main": "app.js",
   "authors": [
     "Ed Gilmore"
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "angular-ui": "^0.4.0",
-    "angular-route": "^1.5.0"
+    "angular-route": "^1.5.0",
+    "angular-mocks": "^1.5.0"
   }
 }

@@ -2,15 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Food Truck App</title>
     <link rel="stylesheet" href="dist/site.css">
+    <style>
+        [ng-cloak]{
+            display: none !important;
+        }
+    </style>
 </head>
-<body ng-app="foodTruckApp" ng-cloak>
-<!--views-->
-<ng-view></ng-view>
+<body ng-app="app" ng-cloak>
+<ul class="nav nav-tabs">
+    <li role="presentation"><a href="#/">See Food Trucks</a></li>
+</ul>
+<div ng-view></div>
 <script src="vendor/angular.min.js"></script>
 <script src="vendor/angular-route.min.js"></script>
 <script src="vendor/angular-ui.js"></script>
-<script src="dist/app.min.js"></script>
+<script src="scripts/app.module.js"></script>
+<script src="scripts/services/data.service.js"></script>
+<script src="scripts/controllers/main.controller.js"></script>
 </body>
 </html>

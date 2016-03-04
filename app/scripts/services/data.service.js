@@ -3,16 +3,22 @@
  */
 (function () {
     'use strict';
-    angular.module('foodTruckApp').service('DataService',dataService);
-    function dataService(){
-        function getFoodTruckData(){
-            return $http.get()
-                .then(function(data){
-                    return data;
-                });
-        }
+    angular.module('app').factory('dataService', dataService);
+
+    dataService.$inject = ['$http'];
+
+    function dataService($http){
         return {
-            getFoodTruckLocations: getFoodTruckData
+            getFoodTrucks: getFoodTrucks
+        };
+        function getFoodTrucks(){
+            return $http.get('https://data.sfgov.org/resource/rqzj-sfat.json')
+                .success(function(data){
+                    return data;
+                })
+                .error(function(err){
+                    return err;
+                })
         }
     }
 })();
