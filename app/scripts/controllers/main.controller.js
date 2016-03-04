@@ -25,7 +25,18 @@
             uiGmapGoogleMapApi
                 .then(function(maps){
                     if(vm.foodtrucks.length > 0){
-                        vm.map = { center: {latitude: vm.foodtrucks[1].latitude, longitude: vm.foodtrucks[1].longitude }, zoom: 15};
+                        function mapLocation(){
+                            for(var i = 0; i < vm.foodtrucks.length; i++){
+                                if(vm.foodtrucks[i].location !== undefined){
+                                    return {
+                                        latitude: vm.foodtrucks[i].latitude,
+                                        longitude: vm.foodtrucks[i].longitude
+                                    }
+                                }
+                            }
+                        }
+                        var cityMap = mapLocation();
+                        vm.map = { center: {latitude: cityMap.latitude, longitude: cityMap.longitude }, zoom: 15};
                         vm.options = {
                             scrollwheel:true,
                             draggable: true
