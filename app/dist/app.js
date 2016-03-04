@@ -36,24 +36,15 @@
         vm.markers = [];
 
         function init(){
-            dataService.getFoodTrucks()
-                .then(function (response) {
-                    if(response.error){
-                        alert(error.message);
-                    }
-                    else{
-                        vm.foodtrucks = response.data;
-                    }
-                });
             uiGmapGoogleMapApi
                 .then(function(maps){
                     mapInit(vm.foodtrucks)
                 });
         }
-        init();
         function mapInit(foodtrucks){
             if(foodtrucks.length < 1 ){
-                dataService.getFoodTrucks().then(function(){
+                dataService.getFoodTrucks().then(function(response){
+                    vm.foodtrucks = response.data;
                     mapInit(vm.foodtrucks);
                 })
             }
@@ -87,6 +78,7 @@
                 }
             }
         }
+        init();
     }
 })();
 /**
