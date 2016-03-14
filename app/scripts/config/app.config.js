@@ -2,6 +2,7 @@
  * Created by Edward on 3/13/2016.
  */
 (function(){
+    'use strict';
     angular
         .module('app')
         .config(config);

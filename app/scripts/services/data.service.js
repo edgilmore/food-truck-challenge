@@ -20,7 +20,7 @@
                 })
                 .error(function(err){
                     return err;
-                })
+                });
         }
     }
 })();

@@ -14,14 +14,14 @@
             function addMarkers(data){
                 var markers = [];
                 for(var i = 0; i < data.length; i++){
-                    if(data[i].location != undefined && data[i].objectid != undefined){
+                    if(data[i].location !== undefined && data[i].objectid !== undefined){
                         var markerObject = {
                             id: data[i].objectid,
                             latitude: data[i].location.latitude,
                             longitude: data[i].location.longitude,
                             title: data[i].applicant
                         };
-                        markers.push(markerObject)
+                        markers.push(markerObject);
                     }
                 }
                 return markers;
