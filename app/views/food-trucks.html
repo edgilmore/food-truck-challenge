@@ -1,9 +1,9 @@
-<div class="container-fluid">
+<div class="container-fluid" ng-controller="MainController as main">
     <div class="row">
-        <h1>{{ vm.title }}</h1>
+        <h1>{{ main.title }}</h1>
         <div>
-            <ui-gmap-google-map center='vm.map.center' zoom='vm.map.zoom' options="vm.options">
-                <ui-gmap-markers models="vm.markers" coords="'self'" icon="'icon'"></ui-gmap-markers>
+            <ui-gmap-google-map center='main.google.map.center' zoom='main.google.map.zoom' options="main.google.map.options">
+                <ui-gmap-markers models="main.markers" coords="'self'" icon="'icon'"></ui-gmap-markers>
             </ui-gmap-google-map>
         </div>
     </div>

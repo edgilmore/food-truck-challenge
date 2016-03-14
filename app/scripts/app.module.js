@@ -3,20 +3,7 @@
  */
 (function(){
     'use strict';
-    angular.module('app', ['ngRoute', 'uiGmapgoogle-maps']);
-    angular.module('app')
-        .config(function($routeProvider, uiGmapGoogleMapApiProvider){
-            uiGmapGoogleMapApiProvider.configure({
-                v: '3',
-                libraries: 'weather,geometry,visualization'
-            });
-            $routeProvider
-                .when('/', {
-                    controller: 'mainController',
-                    templateUrl: 'views/food-trucks.html',
-                    controllerAs: 'vm'
-                })
-                .otherwise({redirectTo: '/'});
-        });
+    angular
+        .module('app', ['ngRoute', 'uiGmapgoogle-maps']);
 })();
 

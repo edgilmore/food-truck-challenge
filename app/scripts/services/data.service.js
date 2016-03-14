@@ -3,7 +3,9 @@
  */
 (function () {
     'use strict';
-    angular.module('app').factory('dataService', dataService);
+    angular
+        .module('app')
+        .factory('dataService', dataService);
 
     dataService.$inject = ['$http'];
 

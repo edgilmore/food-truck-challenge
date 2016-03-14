@@ -18,8 +18,8 @@ gulp.task('build:sass', function () {
 gulp.task('build:scripts', function() {
     gulp.src('./app/scripts/**/*.js')
         .pipe(concat('app.js'))
-/*        .pipe(uglify())
-        .pipe(rename('app.min.js'))*/
+        //.pipe(uglify())
+        //.pipe(rename('app.min.js'))
         .pipe(gulp.dest('./app/dist'));
 });
 //clean files
